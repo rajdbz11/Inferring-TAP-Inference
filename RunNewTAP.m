@@ -8,14 +8,19 @@
 % looking at only the first session now
 hh = 1;
 rinit = rMat(:,1,hh); 
+% rinit = rTestMat(:,1); 
 
 % K = KTrue;
 % J = JTrue;
 
-Khat    = Phat(1:27);
-JhatVec = Phat(28:end);
-K       = Khat;
-J       = JVecToMat(JhatVec);
+load Data/Khat_Scaled.mat
+K = Khat;
+J = JTrue;
+ 
+% Khat    = Phat(1:27);
+% JhatVec = Phat(28:end);
+% K       = Khat;
+% J       = JVecToMat(JhatVec);
 
 J0 = J.^0;
 J1 = J.^1;
@@ -24,6 +29,7 @@ J2 = J.^2;
 rNewMat  = zeros(NVars,N_T);
 
 hVec    = hMat(:,hh);
+% hVec    = hTest;
 rOld    = rinit; % Initialize 
 r       = zeros(NVars,1);
 
@@ -63,9 +69,9 @@ for nIter = 1:N_T
     rOld = r;
 end
 
-figure; plot(rNewMat(:,1:end-1)','bx-')
-hold on
-plot(rMat(:,2:end,hh)','ro-')
+% figure; plot(rNewMat(:,1:end-1)','bx-')
+% hold on
+% plot(rMat(:,2:end,hh)','ro-')
 
 % figure; plot(K,'bx-'); hold on; plot(KTrue,'ro-')
 % figure; plot(JhatVec,'bx-'); hold on; plot(JTrueVec,'ro-')

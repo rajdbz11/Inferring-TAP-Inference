@@ -3,7 +3,7 @@
 clear;
 load Data/KTrue;
 
-NVars = 10;
+NVars = 5;
 JMat  = GenJMat(NVars);
 
 
@@ -12,14 +12,15 @@ JTrue = JMat;
 JTrueVec = JMatToVec(JTrue);
 
 % Run the TAP Inference
-N_T = 50;
-N_H = 1;
+N_T = 30;
+N_H = 5;
 lam = 0.1;
 
-hMat = 0.1*randn(NVars, N_H);
+hMat = 1*randn(NVars, N_H);
 
 
 rMat = RunTAP(JMat, N_T, N_H, hMat, lam);
+
 
 
 % Generate the fMat

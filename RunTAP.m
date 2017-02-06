@@ -11,7 +11,8 @@ rMat  = zeros(NVars,N_T,N_h);
 for hh = 1:N_h
     
     hVec    = hMat(:,hh);
-    rOld    = 0.25*randn(NVars,1); % Initialize 
+    %rOld    = 0.25*randn(NVars,1); % Initialize 
+    rOld    = 0*randn(NVars,1); % Initialize 
     r       = zeros(NVars,1);
 
     for nIter = 1:N_T
