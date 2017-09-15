@@ -1,7 +1,7 @@
 % Script to do gradient descent type algo to find K and J together
 
-%LearnTAP;
-LearnTAP_WithEmbeddings;
+% LearnTAP;
+% LearnTAP_WithEmbeddings;
 
 options = optimoptions(@fminunc,'Display','iter','Algorithm','quasi-newton','tolX',1e-12,'MaxFunEvals',20000,'GradObj','on','TolFun',1e-12,'MaxIter',2500);
 
